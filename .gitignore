@@ -8,8 +8,6 @@
 *.bk
 *.bkup
 .kitchen.local.yml
-Berksfile.lock
-Gemfile.lock
 
 .bundle/
 .cache/

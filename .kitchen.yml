@@ -1,0 +1,25 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+  environments_path: "test/integration/environments"
+  require_chef_omnibus: 11.10.4
+  solo_rb:
+    environment: test
+
+platforms:
+#- name: ubuntu-14.04
+- name: ubuntu-13.10
+- name: ubuntu-12.04
+- name: debian-7.2.0
+- name: centos-6.5
+
+suites:
+- name: default
+  run_list:
+  - recipe[apache2_test::default]
+  attributes:
+    apache:
+       version: "2.4"
