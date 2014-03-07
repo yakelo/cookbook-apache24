@@ -1,6 +1,6 @@
 apache2 Cookbook
 ================
-[![Build Status](https://secure.travis-ci.org/opscode-cookbooks/apache2.png?branch=master)](http://travis-ci.org/opscode-cookbooks/apache2)
+[![Build Status](https://secure.travis-ci.org/onehealth-cookbooks/apache2.png?branch=master)](http://travis-ci.org/onehealth-cookbooks/apache2)
 
 
 This cookbook provides a complete Debian/Ubuntu style Apache HTTPD
@@ -20,6 +20,10 @@ sites (vhosts). The scripts are:
 This cookbook ships with templates of these scripts for non
 Debian/Ubuntu platforms. The scripts are used in the __Definitions__
 below.
+
+Note: This version is a fork of the original Opscode Apache2 cookbook, to provide much needed support for Apache 2.4. 
+      For more details see https://github.com/opscode-cookbooks/apache2/pull/100
+
 
 Requirements
 ============

@@ -2,6 +2,12 @@ apache2 Cookbook Changelog
 ==========================
 This file is used to list changes made in each version of the apache2 cookbook.
 
+v2.0
+
+Unfortunately, we had to fork this cookbook to add support Apache 2.4. 
+For history see https://github.com/opscode-cookbooks/apache2/pull/100
+
+
 v1.8.14
 -------
 Version bump for toolchain sanity
