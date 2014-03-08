@@ -2,12 +2,13 @@ apache2 Cookbook Changelog
 ==========================
 This file is used to list changes made in each version of the apache2 cookbook.
 
-v2.0
+v2.0.X
+-------
 
 Unfortunately, we had to fork this cookbook to add support Apache 2.4. 
 For history see https://github.com/opscode-cookbooks/apache2/pull/100
 
-- Default to `apache.version` = 2.4
+- Default `apache.version` to 2.4
 - Add support for `conf-available` and `conf-enabled`, breaks some apache 2.2 compatibility in regards the conf.d directory
 
 v1.8.14
