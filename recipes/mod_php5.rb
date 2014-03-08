@@ -55,7 +55,7 @@ when 'freebsd'
   end
 end
 
-file "#{node['apache']['dir']}/conf.d/php.conf" do
+file "#{node['apache']['dir']}/conf-available/php.conf" do
   action :delete
   backup false
 end

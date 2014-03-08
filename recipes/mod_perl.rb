@@ -32,7 +32,7 @@ when 'rhel', 'fedora'
   package 'perl-libapreq2'
 end
 
-file "#{node['apache']['dir']}/conf.d/perl.conf" do
+file "#{node['apache']['dir']}/conf-available/perl.conf" do
   action :delete
   backup false
 end

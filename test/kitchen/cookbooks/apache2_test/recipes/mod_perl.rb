@@ -28,12 +28,12 @@ package 'perl-CGI-SpeedyCGI' do
   only_if { platform?('redhat', 'centos', 'scientific', 'fedora', 'amazon') }
 end
 
-file "#{node['apache']['dir']}/conf.d/apreq.conf" do
+file "#{node['apache']['dir']}/conf-available/apreq.conf" do
   action :delete
   only_if { platform?('redhat', 'centos', 'scientific', 'fedora', 'amazon') }
 end
 
-file "#{node['apache']['dir']}/conf.d/perl.conf" do
+file "#{node['apache']['dir']}/conf-available/perl.conf" do
   action :delete
   only_if { platform?('redhat', 'centos', 'scientific', 'fedora', 'amazon') }
 end

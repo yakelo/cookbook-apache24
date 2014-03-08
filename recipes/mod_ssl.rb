@@ -25,7 +25,7 @@ if platform_family?('rhel', 'fedora', 'suse')
     notifies :run, 'execute[generate-module-list]', :immediately
   end
 
-  file "#{node['apache']['dir']}/conf.d/ssl.conf" do
+  file "#{node['apache']['dir']}/conf-available/ssl.conf" do
     action :delete
     backup false
   end

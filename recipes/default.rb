@@ -70,7 +70,7 @@ if platform_family?('rhel', 'fedora', 'arch', 'suse', 'freebsd')
     action  :nothing
   end
 
-  %w[a2ensite a2dissite a2enmod a2dismod].each do |modscript|
+  %w[a2ensite a2dissite a2enmod a2dismod a2enconf a2disconf].each do |modscript|
     template "/usr/sbin/#{modscript}" do
       source "#{modscript}.erb"
       mode  '0700'
@@ -81,14 +81,14 @@ if platform_family?('rhel', 'fedora', 'arch', 'suse', 'freebsd')
 
   # installed by default on centos/rhel, remove in favour of mods-enabled
   %w[proxy_ajp auth_pam authz_ldap webalizer ssl welcome].each do |f|
-    file "#{node['apache']['dir']}/conf.d/#{f}.conf" do
+    file "#{node['apache']['dir']}/conf-available/#{f}.conf" do
       action :delete
       backup false
     end
   end
 
   # installed by default on centos/rhel, remove in favour of mods-enabled
-  file "#{node['apache']['dir']}/conf.d/README" do
+  file "#{node['apache']['dir']}/conf-available/README" do
     action :delete
     backup false
   end
@@ -126,7 +126,7 @@ end
 
 %W[
   #{node['apache']['dir']}/ssl
-  #{node['apache']['dir']}/conf.d
+  #{node['apache']['dir']}/conf-available
   #{node['apache']['cache_dir']}
 ].each do |path|
   directory path do
@@ -168,7 +168,7 @@ template 'apache2.conf' do
 end
 
 template 'apache2-conf-security' do
-  path     "#{node['apache']['dir']}/conf.d/security.conf"
+  path     "#{node['apache']['dir']}/conf-available/security.conf"
   source   'security.erb'
   owner    'root'
   group    node['apache']['root_group']
@@ -178,7 +178,7 @@ template 'apache2-conf-security' do
 end
 
 template 'apache2-conf-charset' do
-  path      "#{node['apache']['dir']}/conf.d/charset.conf"
+  path      "#{node['apache']['dir']}/conf-available/charset.conf"
   source   'charset.erb'
   owner    'root'
   group    node['apache']['root_group']

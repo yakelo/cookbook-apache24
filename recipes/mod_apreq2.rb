@@ -43,7 +43,7 @@ when 'rhel', 'fedora'
   end
 end
 
-file "#{node['apache']['dir']}/conf.d/apreq.conf" do
+file "#{node['apache']['dir']}/conf-available/apreq.conf" do
   action :delete
   backup false
 end

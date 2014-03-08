@@ -26,7 +26,7 @@ when 'rhel', 'fedora'
   end
 end
 
-file "#{node['apache']['dir']}/conf.d/xsendfile.conf" do
+file "#{node['apache']['dir']}/conf-available/xsendfile.conf" do
   action :delete
   backup false
 end

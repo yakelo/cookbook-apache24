@@ -55,7 +55,7 @@ else
       notifies :run, 'execute[generate-module-list]', :immediately
     end
 
-    file "#{node['apache']['dir']}/conf.d/auth_cas.conf" do
+    file "#{node['apache']['dir']}/conf-available/auth_cas.conf" do
       action :delete
       backup false
     end

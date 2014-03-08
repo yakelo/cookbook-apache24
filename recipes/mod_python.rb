@@ -26,7 +26,7 @@ when 'rhel', 'fedora'
   end
 end
 
-file "#{node['apache']['dir']}/conf.d/python.conf" do
+file "#{node['apache']['dir']}/conf-available/python.conf" do
   action :delete
   backup false
 end
