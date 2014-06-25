@@ -127,6 +127,7 @@ end
 %W[
   #{node['apache']['dir']}/ssl
   #{node['apache']['dir']}/conf-available
+  #{node['apache']['dir']}/conf-enabled
   #{node['apache']['cache_dir']}
 ].each do |path|
   directory path do
