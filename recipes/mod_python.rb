@@ -21,7 +21,7 @@ case node['platform_family']
 when 'debian'
   package 'libapache2-mod-python'
 when 'rhel', 'fedora'
-  package 'mod_python' do
+  package "#{node['apache']['modules']['python']['package']}" do
     notifies :run, 'execute[generate-module-list]', :immediately
   end
 end
