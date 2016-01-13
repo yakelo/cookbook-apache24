@@ -31,4 +31,7 @@ file "#{node['apache']['dir']}/conf-available/python.conf" do
   backup false
 end
 
-apache_module 'python'
+apache_module 'python' do
+	conf true
+	filename "#{node['apache']['modules']['python']['filename']}"
+end
