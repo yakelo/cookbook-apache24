@@ -235,5 +235,6 @@ end
 end
 
 
+default['apache']['modules']['python']['name']     = 'python';
 default['apache']['modules']['python']['package']  = 'mod_python';
 default['apache']['modules']['python']['filename'] = 'mod_python.so';
